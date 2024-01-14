@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link href="{% static 'First_App/css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% block mainmenu %}
+    <div class="nav_cont">
+
+        <div class="navigation_box">
+                <nav>
+                    <ul class="navigation_list">
+                        {% for n in navigation %}
+                        <li class="navigation_list_item"><a href="{% url n.url_name %}">{{n.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        <div class="content_box">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+    {% endblock mainmenu %}
+
+    <div class="footer">
+        Климов Олег Анатольевич РИ-220935
+    </div>
+</body>
+</html>

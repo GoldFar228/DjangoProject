@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0
+}
+
+.navigation_box{
+    margin-right: 10px;
+    font-size: 22px;
+    border: 1px solid green;
+    height: 100%;
+    width: 30%;
+}
+
+.navigation_list{
+    list-style: none;
+}
+
+.navigation_list_item{
+    margin-bottom: 10px;
+    text-style: none;
+}
+
+.nav_cont{
+    display: flex;
+    border: 1px solid black;
+}
+
+.footer{
+    border: 1px solid blue;
+}
