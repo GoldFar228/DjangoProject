@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 .navigation_box{
@@ -8,23 +8,35 @@ body{
     font-size: 22px;
     border: 1px solid green;
     height: 100%;
-    width: 30%;
+    width: 12%;
+    background: black;
 }
 
 .navigation_list{
+    padding-left: 0;
     list-style: none;
 }
 
 .navigation_list_item{
     margin-bottom: 10px;
-    text-style: none;
 }
-
+a {
+    text-decoration: none;
+}
 .nav_cont{
     display: flex;
     border: 1px solid black;
+    background: lightgray;
+    min-height: 100%;
+}
+
+.content_box{
 }
 
 .footer{
+    position: absolute;
+    bottom: 100px;
+    margin-top: auto;
     border: 1px solid blue;
+    width: 99.9%;
 }

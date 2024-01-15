@@ -1,4 +1,9 @@
 from django.shortcuts import render, redirect
+from .load_csv import import_data_csv
+
+#file_path = "C:\Django\vacancies.csv"
+#import_data_csv(file_path)
+
 navigation = [{"title": "Главная страница", "url_name": "main"},
               {"title": "Востребованность", "url_name": "demand"},
               {"title": "География", "url_name": "geography"},
