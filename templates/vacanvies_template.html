@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# программист</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <div class="name">
+        <p style="margin-top: 20px">C#</p>
+        <p style="margin-top: -25px">программист</p>
+        <img class="logo" src="{% static 'images/logotip.png' %}">
+    </div>
+</header>
+<main>
+    <div class="body">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li>
+                        <div><a href="/">Главная</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'info' %}>Востребованность</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'geography' %}>География</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'skills' %}>Навыки</a></div>
+                    </li>
+                    <li>
+                        <div style="border-bottom: 1px solid #341D44; justify-content: center"><a
+                                style="color: #341D44 !important;" href={% url 'vacancies' %}>Последние вакансии</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text">
+            <h1>Последние вакансии</h1>
+            <div class="empty_skills"></div>
+        </div>
+        <div class="LVtable" style="margin-left: 30px;">
+            {% for vacancy in vacancies %}
+                <div class="vacancies">
+                    <h2 class="h2-vac">{{ vacancy.name }}</h2>
+                    <br>
+                    <p class="p-vac"><b>Зарплата:</b> {{ vacancy.salary }}</p>
+                    <p class="p-vac">{{ vacancy.description|safe }}</p>
+                    <p class="p-vac"><strong>Условия:</strong></p>
+                    <p class="p-vac"><b>Навыки:</b>{{ vacancy.key_skills }}</p>
+                    <p class="p-vac"><b>Компания:</b>{{ vacancy.employer.name }}</p>
+                    <p class="p-vac"><b>Расположение:</b> {{ vacancy.area.name }}</p>
+                    <p class="p-vac"><b>Дата публикации:</b> {{ vacancy.published_at }}</p>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Климов Олег Анатольевич АТ-01&emsp;&emsp;</p>
+</footer>
+</body>
+</html>

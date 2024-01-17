@@ -32,6 +32,7 @@
           <option value="cv2.*" />
           <option value="pstats.Stats.stats" />
           <option value="main.functions_to_profile" />
+          <option value="First_App.models.Person.objects" />
         </list>
       </option>
     </inspection_tool>

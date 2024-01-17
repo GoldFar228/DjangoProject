@@ -1,6 +1,60 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# программист</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+<body>
+<header>
+    <div class="name">
+        <p style="margin-top: 20px">C#</p>
+        <p style="margin-top: -25px">программист</p>
+        <img class="logo" src="{% static 'images/logotip.png' %}">
+    </div>
+</header>
+<main>
+    <div class="body">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li>
+                        <div><a href="/">Главная</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'info' %}>Востребованность</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'geography' %}>География</a></div>
+                    </li>
+                    <li>
+                        <div style="border-bottom: 1px solid #341D44; justify-content: center"><a
+                                style="color: #341D44 !important;" a href={% url 'skills' %}>Навыки</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'vacancies' %}>Последние вакансии</a></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text" style="top: 200px">
+            {% for i in skillspage %}
 
-{% block content %}
-<h1>{{title}}</h1>
-<p>sometext</p>
-{% endblock content %}
+                <h1>{{ i.text }}</h1>
+                <div class="tables_skills">
+                    {{ i.title|safe }}
+                </div>
+                <img class="skills_graph" src={{ i.graph.url }}/>
+                <div class="empty_skills"></div>
+            {% endfor %}
+
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Климов Олег Анатольевич АТ-01&emsp;&emsp;</p>
+</footer>
+</body>
+</html>

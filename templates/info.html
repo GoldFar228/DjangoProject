@@ -24,11 +24,11 @@
                         <div><a href="/">Главная</a></div>
                     </li>
                     <li>
-                        <div><a href={% url 'info' %}>Востребованность</a></div>
+                        <div style="border-bottom: 1px solid #341D44; justify-content: center"><a
+                                style="color: #341D44 !important;" href={% url 'info' %}>Востребованность</a></div>
                     </li>
                     <li>
-                        <div style="border-bottom: 1px solid #341D44; justify-content: center"><a
-                                style="color: #341D44 !important;" href={% url 'geography' %}>География</a></div>
+                        <div><a href={% url 'geography' %}>География</a></div>
                     </li>
                     <li>
                         <div><a href={% url 'skills' %}>Навыки</a></div>
@@ -40,12 +40,13 @@
             </nav>
         </div>
         <div class="home_text" style="top: 200px">
-            {% for i in geographypage %}
-            <img class="geography_graph_1" src="{{ i.graph_left.url }}"/>
-            <img class="geography_graph_2" src="{{ i.graph_right.url }}"/>
-            <div class="tables">
-                {{ i.title|safe }}
-            </div>
+            {% for i in infopage %}
+
+                <img class="demand_graph_1" src="{{ i.graph_left.url }}"/>
+                <img class="demand_graph_2" src="{{ i.graph_right.url }}"/>
+                <div class="tables">
+                        {{ i.title|safe }}
+                </div>
             {% endfor %}
 
         </div>
