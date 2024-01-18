@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Home, Demand, Skills, Geography
+from .utils import get_vacancies
 
 
 # Create your views here.
